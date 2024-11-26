@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  color: white;
+  background: radial-gradient(
+    54.86% 41.72% at 71.56% 58.28%,
+    #4e5d75 0%,
+    #000000 100%
+  );
+}
+
+.news-hover:hover {
+  background-color: #2a283e;
+  background: #2a283e;
+}
