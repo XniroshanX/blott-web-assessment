@@ -9,18 +9,30 @@ import { useEffect, useState } from "react";
 const NewsPage = () => {
   const [newsData, setNewsData] = useState<News[]>([]);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getNews = async () => {
       try {
+        setLoading(true);
         const newsResponse = await getMarketNews();
         setNewsData(newsResponse.data);
       } catch (error) {
         setError("Something went wrong. Please try again later.");
+      } finally {
+        setLoading(false);
       }
     };
     getNews();
   }, []);
+
+  if (loading) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        Loading...
+      </div>
+    );
+  }
 
   return (
     <div>
