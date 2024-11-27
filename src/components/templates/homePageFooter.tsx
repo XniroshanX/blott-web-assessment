@@ -1,7 +1,15 @@
+"use client";
 import Image from "next/image";
 import Button from "../uis/button";
+import { useRouter } from "next/navigation";
 
 const HomePageFooter = () => {
+  const router = useRouter();
+
+  const navigateHandler = () => {
+    router.push("/news");
+  };
+
   return (
     <div className="flex flex-col sm:flex-row items-center justify-center p-20">
       <div className="w-full sm:1/2">
@@ -14,7 +22,7 @@ const HomePageFooter = () => {
         />
       </div>
       <div className="w-full sm:1/2 flex justify-center">
-        <Button label="Ready" />
+        <Button label="Ready" onClick={navigateHandler} />
       </div>
     </div>
   );

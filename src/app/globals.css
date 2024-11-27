@@ -7,3 +7,7 @@ body {
   background-color: black;
   color: white;
 }
+
+.news-hover:hover {
+  background-color: #2a283e;
+}
