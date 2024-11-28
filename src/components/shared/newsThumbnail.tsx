@@ -17,6 +17,7 @@ const NewsThumbnail = ({
   date,
   title,
 }: NewsThumbnailProp) => {
+  const formattedDate = getDateByTimestamp(date);
   return (
     <>
       <div className="block mb-5 md:hidden p-5 news-hover">
@@ -33,7 +34,7 @@ const NewsThumbnail = ({
           <div className="flex">
             <div className="w-1/2 text-zinc-400 text-sm mb-2">{source}</div>
             <div className="w-1/2 text-zinc-400 text-sm text-right">
-              {getDateByTimestamp(date)}
+              {formattedDate}
             </div>
           </div>
           <div className="text-2xl">{title}</div>
@@ -55,7 +56,7 @@ const NewsThumbnail = ({
             <div className="flex justify-center items-center w-full mt-2">
               <div className="w-1/2 text-zinc-400 text-xl">{source}</div>
               <div className="w-1/2 text-right text-zinc-400 text-xl">
-                {getDateByTimestamp(date)}
+                {formattedDate}
               </div>
             </div>
             <h2 className="text-3xl text-white mt-3">{title}</h2>
